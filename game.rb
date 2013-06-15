@@ -66,6 +66,9 @@ class Journey
   ]
 end
 
+loop do
 turn = "#{Journey.new} #{Event.new}"
 puts turn
 `say #{turn}`
+gets
+end
