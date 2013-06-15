@@ -23,7 +23,14 @@ class Event
     "dragon",
     "badger mage",
     "sea monster",
-    "pack of wolves"
+    "pack of wolves",
+    "flock of pidgeons",
+    "horde of a terantulas",
+    "speeding pair of eagles",
+    "gnashing shark",
+    "angry dragonflies",
+    "T-Rex!",
+    "talons of a silver hawk"
   ]
 end
 
@@ -55,7 +62,7 @@ class Journey
 
   LOCATIONS = [
     "lake", "mountains", "rushing river", "deep wood", "grasslands",
-    "jungle", "narrow crevace", 'giant spider\'s lair', "great lake"
+    "jungle", "narrow crevice", "giant spiders lair", "great lake"
   ]
 end
 
