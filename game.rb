@@ -1,56 +1,64 @@
-module Dice
-  extend self
-  def roll
-    (1..6).to_a.sample
-  end
-end
-
 class Event
-  attr_reader :turn
+  attr_reader :interaction, :character
 
-  def initialize roll_outcome
-    @turn = EVENTS[Integer(roll_outcome) - 1]
-    `say #{self}`
+  def initialize
+    @interaction = INTERACTIONS.sample
+    @character = CHARACTERS.sample
   end
 
   def to_s
-    "You #{turn}"
+    "you #{interaction} a #{character}"
   end
 
   private
 
-  EVENTS = [
-    "are attacked by dragons",
-    "are befriended by a dragon",
-    "stumble across the badger mage",
-    "find a rare item",
-    "fall into a hole",
-    "escape from a pack of wolves"
+  INTERACTIONS = [
+    "are attacked by",
+    "are befriended by",
+    "stumble across",
+    "escape from"
+  ]
+
+  CHARACTERS = [
+    "dragon",
+    "badger mage",
+    "sea monster",
+    "pack of wolves"
   ]
 end
 
 class Journey
-  attr_reader :turn
-  def initialize roll_outcome
-    @turn = TRIPS[Integer(roll_outcome) - 1]
-    `say #{self}`
+  attr_reader :movement, :location
+  def initialize
+    @movement = MOVINGS.sample
+    @location = LOCATIONS.sample
   end
 
   def to_s
-    "While #{turn}"
+    "While #{movement} #{location}"
   end
 
   private
 
-  TRIPS = [
-    "walking to the lake",
-    "riding a horse through the mountains",
-    "boating down a river",
-    "flying on giant eagles to the deep wood",
-    "riding the train through the grasslands",
-    "treking through the jungle"
+  MOVINGS = [
+    "walking to the",
+    "riding a horse through the",
+    "boating down a",
+    "flying on giant eagles to the",
+    "riding the train through the",
+    "treking through the",
+    "sailing through a",
+    "stalking through a",
+    "fishing in the",
+    "camping in the"
+  ]
+
+  LOCATIONS = [
+    "lake", "mountains", "rushing river", "deep wood", "grasslands",
+    "jungle", "narrow crevace", 'giant spider\'s lair', "great lake"
   ]
 end
 
-Journey.new Dice.roll
-Event.new Dice.roll
+turn = "#{Journey.new} #{Event.new}"
+puts turn
+`say #{turn}`
