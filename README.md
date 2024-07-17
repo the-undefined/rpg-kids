@@ -10,6 +10,8 @@ Act out what you hear! Fun times ensue.
 
 ## Usage
 
+(Requires the `say` command to be installed.)
+
 Dowload the repo (for now):
 
 ```bash
